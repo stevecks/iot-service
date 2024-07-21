@@ -1,9 +1,8 @@
 .wrapper {
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    justify-content: center;
     gap: 40px;
     position: relative;
     width: 410px;
@@ -11,21 +10,29 @@
     background: rgba(88, 130, 193, 0.28);
     backdrop-filter: blur(8.89323px);
     border-radius: 28.4583px;
+    
 }
 
-.logo {
+.form {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.form__logo {
 font-family: 'Roboto';
 font-style: normal;
 font-weight: 900;
 font-size: 24px;
 line-height: 28px;
 display: flex;
-align-items: center;
+justify-content: center;
 color: #FFFFFF;
-
+margin-top: 10px;
 }
-
-.header {
+.form__title {
 margin-top: 40px;
 font-family: 'Roboto';
 font-style: normal;
@@ -34,31 +41,70 @@ font-size: 24px;
 line-height: 28px;
 display: flex;
 align-items: center;
-
+margin-left: 0px;
 color: #FFFFFF;
+margin-bottom: 24px;
 }
 
 form .input-box {
+    flex-direction: column;
     position: relative;
     margin-top: 20px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     width: 250px;
-    height: 40px;
+
    
 }
 
-.input-box input {
+.input-box > input {
     width: 100%;
-    height: 100%;
+    height: 40px;
     background: #FFFFFF;
     border: 0.711458px solid #BCBEC0;
     border-radius: 5px;
+    padding-left: 16px;
+}
+
+.input-box input::placeholder
+{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+align-items: center;
+
+color: #BCBEC0;
+
+}
+
+.input-box__info
+{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 13px;
+line-height: 15px;
+display: flex;
+margin-left: 0px;
+color: #FFFFFF;
+padding-left: 0px;
+margin-bottom: 8px;
+}
+
+.password__label {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 36px;
+    right: 10px;
 }
 
 form button {
-    
+    margin-top: 24px;
     background: #003465;
     border-radius: 7.11458px;
     display: flex;
