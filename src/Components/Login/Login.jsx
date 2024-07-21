@@ -1,44 +1,79 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import "./Login.css";
+// import { Button } from '@mui/material';
+// import IconButton from '@mui/material/IconButton';
+//import TextField from '@mui/material/TextField';
+
 const Login = () => {
-    const [password, setPassword] = useState("");
-    const [visible, SetVisible] = useState(false);
+    const [formData, setFormData] = useState({ name: "", password: "" });
+    const [visible, setVisible] = useState(false);
+    const [errors, setErrors] = useState({ name: false, password: false });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+        if (value) {
+            setErrors({ ...errors, [name]: false });
+        }
+    };
+
+    const handleBlur = (e) => {
+        const { name, value } = e.target;
+        if (!value) {
+            setErrors({ ...errors, [name]: true });
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newErrors = { name: !formData.name, password: !formData.password };
+        setErrors(newErrors);
+        const isValid = !Object.values(newErrors).includes(true);
+        if (isValid) {
+            // Handle successful form submission
+        }
+    };
+
     return (
-        <div className='wrapper'>
-            <div className="form">
-                <div className="form__content">
-                    <p className='form__logo logo'> Your Logo</p>
-                    <h1 className='form__title'>Login</h1>
-                    <form action="#" class="form__form-box form-box">
+        <div className='container'>
+            <div className="content">
+                <div className="logo">Iot Service</div>
+                <h2 className="label">Login</h2>
 
-                        <div className="form-box__input-box input-box">
-                            <label className="input-box__info" for="username">Name</label>
-                            <input type="text" name="username" id="username" placeholder='Username' />
-                        </div>
+                <form className="form" onSubmit={handleSubmit}>
+                    <label className="form__label" htmlFor="name">Name</label>
+                    <input
+                        className='form__input-box__input'
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder='Username'
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
+                    {errors.name && <p className="form__error">Name is required</p>}
 
-                        <div className="form-box__input-box input-box">
-                            <label className="input-box__info password__label" for="password">Password</label>
-                            <div className="icon" onClick={() => SetVisible(!visible)}>
-                                {
-                                    visible ? <IoMdEye /> : <IoMdEyeOff />
-                                }
-                                </div>
-                            <input value={password}
-                                type={visible ? "text" : "password"}
-                                onChange={e => setPassword(e.target.value)}
-                                name="password"
-                                className="form__input password__input"
-                                id="password"
-                                placeholder='Password' />
-                                
+                    <label className="form__label" htmlFor="password">Password</label>
+                    <div className="form__input-box">
+                        <input
+                            className="form__input-box__input"
+                            value={formData.password}
+                            type={visible ? "text" : "password"}
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            name="password"
+                            id="password"
+                            placeholder='Password'
+                        />
+                        <div className="form__input-box__icon" onClick={() => setVisible(!visible)}>
+                            {visible ? <IoMdEye className='icon'/> : <IoMdEyeOff className='icon'/>}
                         </div>
-                        <div className="form__button-box button-box" id="SignInButton">
-                            <button type="submit" id="SignInButton" >Login</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    {errors.password && <p className="form__error">Password is required</p>}
+
+                    <button variant="contained" className="button" type="submit">Login</button>
+                </form>
             </div>
         </div>
     );
