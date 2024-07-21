@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Poboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container__back {
+    height: 100dvh;
+    display: flex;
+    
+    background-color: #5a48df;
+    
+    /* background: radial-gradient(58.43% 103.88% at 56.74% 50%, #0085FF 0%, #003465 100%); */
+}
+
+.form1 {
+    font-size: 18px;
+    height: 40px;
+    margin-top: 0px;
+    width: 100%;
+    align-items: center;
+    background: rgba(110, 208, 226, 0.28);
+    
+}
+
+.form1__title
+{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
