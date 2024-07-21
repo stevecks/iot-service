@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import "./Login.css";
-// import { Button } from '@mui/material';
-// import IconButton from '@mui/material/IconButton';
-//import TextField from '@mui/material/TextField';
 
 const Login = () => {
-    const [formData, setFormData] = useState({ name: "", password: "" });
+    //
+    // Функции set...() устанавливают новое значение [переменная, set...]
+    // В useState(...) начальное значение
+    //
     const [visible, setVisible] = useState(false);
+    const [formData, setFormData] = useState({ name: "", password: "" });
     const [errors, setErrors] = useState({ name: false, password: false });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
         if (value) {
-            setErrors({ ...errors, [name]: false });
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                [name]: false,
+            }));
         }
     };
 
     const handleBlur = (e) => {
         const { name, value } = e.target;
         if (!value) {
-            setErrors({ ...errors, [name]: true });
-        }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newErrors = { name: !formData.name, password: !formData.password };
-        setErrors(newErrors);
-        const isValid = !Object.values(newErrors).includes(true);
-        if (isValid) {
-            // Handle successful form submission
+            setErrors((prevErrors) => ({
+                ...prevErrors,
+                [name]: true,
+            }));
         }
     };
 
@@ -41,7 +41,7 @@ const Login = () => {
                 <div className="logo">Iot Service</div>
                 <h2 className="label">Login</h2>
 
-                <form className="form" onSubmit={handleSubmit}>
+                <form className="form" >
                     <label className="form__label" htmlFor="name">Name</label>
                     <input
                         className='form__input-box__input'
@@ -52,7 +52,9 @@ const Login = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                     />
-                    {errors.name && <p className="form__error">Name is required</p>}
+                    {/* {errors.name && <p className="form__error">Name is required</p>} */}
+
+                    <p className={`form__error ${errors.name ? 'show' : ''}`}>Name is required</p>
 
                     <label className="form__label" htmlFor="password">Password</label>
                     <div className="form__input-box">
@@ -70,9 +72,10 @@ const Login = () => {
                             {visible ? <IoMdEye className='icon'/> : <IoMdEyeOff className='icon'/>}
                         </div>
                     </div>
-                    {errors.password && <p className="form__error">Password is required</p>}
+                    {/* {errors.password && <p className="form__error">Password is required</p>} */}
 
-                    <button variant="contained" className="button" type="submit">Login</button>
+                    <p className={`form__error ${errors.password ? 'show' : ''}`}>Password is required</p>
+                    <button className="button" disabled={!formData.name || !formData.password}>Login</button>
                 </form>
             </div>
         </div>
