@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Poboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction:column;
+    min-height: calc(100dvh - 200px);
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: blanchedalmond;
+    position: relative;
+
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info__text__name {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.info__text__descr {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.info__btn-box {
+    display: flex;
+    flex-direction:column;
+    justify-content: start;
+}
+
+.info__btn-box__button {
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #DADEFE;
+    cursor: pointer;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.test2 {
+    display: block;
+    width: 100px;
+    height: 800px;
+    background-color: #ef5858;
+}

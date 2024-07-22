@@ -1,4 +1,4 @@
-import "./DeviceCard.css";
+import styles from "./DeviceCard.module.css";
 import React from 'react';
 import { MdModeEdit } from "react-icons/md";
 
@@ -6,16 +6,19 @@ import { MdModeEdit } from "react-icons/md";
 const DeviceCard = () => {
 
     return (
-        <div className='card'>
-            <div className="card__info">
-                <div className="card__info__description">
-                    <h1 className="card__header">Устройство 1</h1>
-                    <label htmlFor="description">Описание Описание Описание</label>
+        <div className={styles.card}>
+            <div className={styles.info}>
+                <div className={styles.info__text}>
+                    <h2 className={styles.info__text__name}>Устройство 1</h2>
+                    <div className={styles.info__text__descr}>Описание Описание Описание Описание Описание</div>
                 </div>
-                <button className="card__info__button">
-                <MdModeEdit className="card__info__icon"/>
-                </button>  
+                <div className={styles["info__btn-box"]}>
+                    <button className={styles["info__btn-box__button"]}>
+                        <MdModeEdit className={styles.icon}/>
+                    </button>
+                </div>
             </div>
+            <div className={styles.test2}></div>
         </div>
     );
 };

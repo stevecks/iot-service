@@ -28,14 +28,14 @@
 
 .nav-devices1 {
     display: block;
-    height: calc(100dvh - 200px);
+    max-height: calc(100dvh - 120px);
     background-color: #1b0505;
     position: sticky;
-    margin: 20px 20px 20px 0 ;
+    margin-block: 20px;
     top: 20px;
     left: 0px;
 }
+
 .test1 {
-    height: 400px;
-    background-color: red;
+    margin: 20px 0 20px 20px;
 }
