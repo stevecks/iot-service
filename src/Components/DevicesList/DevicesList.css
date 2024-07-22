@@ -13,14 +13,20 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    background-color: #da9999;
+    background-color: #6B96EF;
     padding: 20px;
 }
+
+.card__label {
+    display: flex;
+    margin: 10px;
+}
+
 
 .card__list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
     height: 410px;
     overflow-y: auto;
@@ -30,8 +36,36 @@
 .item {
     padding: 20px;
     border-radius: 20px;
-    background-color: #552020;
+    background-color: #C6D5F3;
     scroll-snap-align: start;
+}
+
+.card__info
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.card__info__text{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.card__info__btn {
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: #DADEFE;
+    cursor: pointer;
+}
+
+.icon {
+    width: 26px;
+    height: 26px;
 }
 
 ::-webkit-scrollbar {
@@ -56,3 +90,6 @@
 #element::-webkit-scrollbar {
     display: none;
 }
+
+
+
