@@ -4,7 +4,7 @@ import DevicesPage from './Components/DevicesPage/DevicesPage';
 function App() {
   return (
     <div >
-      <Login/>
+      <DevicesPage/>
     </div>
   );
 }
