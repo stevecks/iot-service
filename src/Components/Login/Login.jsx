@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import "./Login.css";
+import styles from "./Login.module.css";
 
 const Login = () => {
-    //
-    // Функции set...() устанавливают новое значение [переменная, set...]
-    // В useState(...) начальное значение
-    //
     const [visible, setVisible] = useState(false);
     const [formData, setFormData] = useState({ name: "", password: "" });
     const [errors, setErrors] = useState({ name: false, password: false });
@@ -36,15 +32,15 @@ const Login = () => {
     };
 
     return (
-        <div className='container'>
-            <div className="content">
-                <div className="logo">Iot Service</div>
-                <h2 className="label">Login</h2>
+        <div className={styles.container}>
+            <div className={styles.content}>
+                <div className={styles.logo}>Iot Service</div>
+                <h2 className={styles.label}>Login</h2>
 
-                <form className="form" >
-                    <label className="form__label" htmlFor="name">Name</label>
+                <form className={styles.form} >
+                    <label className={styles.form__label} htmlFor="name">Name</label>
                     <input
-                        className='form__input-box__input'
+                        className={styles["form__input-box__input"]}
                         type="text"
                         name="name"
                         id="name"
@@ -54,12 +50,12 @@ const Login = () => {
                     />
                     {/* {errors.name && <p className="form__error">Name is required</p>} */}
 
-                    <p className={`form__error ${errors.name ? 'show' : ''}`}>Name is required</p>
+                    <p className={`${styles.form__error} ${errors.name ? styles.show : ''}`}>Name is required</p>
 
-                    <label className="form__label" htmlFor="password">Password</label>
-                    <div className="form__input-box">
+                    <label className={styles.form__label} htmlFor="password">Password</label>
+                    <div className={styles["form__input-box"]}>
                         <input
-                            className="form__input-box__input"
+                            className={styles["form__input-box__input"]}
                             value={formData.password}
                             type={visible ? "text" : "password"}
                             onChange={handleChange}
@@ -68,14 +64,14 @@ const Login = () => {
                             id="password"
                             placeholder='Password'
                         />
-                        <div className="form__input-box__icon" onClick={() => setVisible(!visible)}>
-                            {visible ? <IoMdEye className='icon'/> : <IoMdEyeOff className='icon'/>}
+                        <div className={styles["form__input-box__icon"]} onClick={() => setVisible(!visible)}>
+                            {visible ? <IoMdEye className={styles.icon}/> : <IoMdEyeOff className={styles.icon}/>}
                         </div>
                     </div>
                     {/* {errors.password && <p className="form__error">Password is required</p>} */}
 
-                    <p className={`form__error ${errors.password ? 'show' : ''}`}>Password is required</p>
-                    <button className="button" disabled={!formData.name || !formData.password}>Login</button>
+                    <p className={`${styles.form__error} ${errors.password ? styles.show : ''}`}>Password is required</p>
+                    <button className={styles.button} disabled={!formData.name || !formData.password}>Login</button>
                 </form>
             </div>
         </div>
