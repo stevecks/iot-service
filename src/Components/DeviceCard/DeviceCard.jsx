@@ -1,6 +1,7 @@
 import styles from "./DeviceCard.module.css";
 import React from 'react';
 import { MdModeEdit } from "react-icons/md";
+import SensorCard from "../SensorCard/SensorCard";
 
 
 const DeviceCard = () => {
@@ -18,7 +19,9 @@ const DeviceCard = () => {
                     </button>
                 </div>
             </div>
-            <div className={styles.test2}></div>
+            <div className={styles["sensors-list"]}>
+                <SensorCard/>
+            </div>
         </div>
     );
 };

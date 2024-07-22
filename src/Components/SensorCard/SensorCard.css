@@ -9,46 +9,44 @@
 
 .card {
     display: flex;
-    flex-direction:column;
-    min-height: calc(100dvh - 200px);
+    justify-content: space-between;
+    flex-direction: row;
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-    background-color: blanchedalmond;
+    background-color: rgb(215, 172, 107);
     position: relative;
-
 }
 
-.info {
+.content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 60px;
+    flex-direction:column;
+    gap: 12px;
 }
 
-.info__text {
+.content__text {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.info__text__name {
+.content__text__name {
     font-size: 28px;
     font-weight: 700;
 }
 
-.info__text__descr {
+.content__text__descr {
     font-size: 16px;
     font-weight: 400;
 }
 
-.info__btn-box {
+.btn-box {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: start;
 }
 
-.info__btn-box__button {
+.btn-box__button {
     border-radius: 20px;
     width: 40px;
     height: 40px;
@@ -61,18 +59,4 @@
 .icon {
     width: 24px;
     height: 24px;
-}
-
-/* .test2 {
-    display: block;
-    width: 100px;
-    height: 800px;
-    background-color: #ef5858;
-} */
-
-.sensors-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
 }
