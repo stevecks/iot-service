@@ -1,10 +1,14 @@
 import './App.css';
-import Login from './Components/Login/Login';
+//import Login from './Components/Login/Login';
+import Header from './Components/Header/Header';
 import DevicesPage from './Components/DevicesPage/DevicesPage';
+import Footer from './Components/Footer/Footer';
 function App() {
   return (
-    <div >
+    <div>
+      <Header/>
       <DevicesPage/>
+      <Footer/>
     </div>
   );
 }

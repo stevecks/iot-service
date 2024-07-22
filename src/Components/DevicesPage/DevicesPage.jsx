@@ -7,10 +7,11 @@ import React from 'react';
 const DevicesPage = () => {
 
     return (
-        <div className='container__back'>
-            <form className="form1">
-            <h2 className="form1__title">Сервис мониторинга для IoT устройств</h2>
-            </form>
+        <div className='container1'>
+            <div className="content1">
+                <div className="nav-devices1"></div>
+                <div className="test1"></div>
+            </div>
         </div>
     );
 };
