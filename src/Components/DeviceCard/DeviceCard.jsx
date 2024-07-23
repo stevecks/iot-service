@@ -21,6 +21,10 @@ const DeviceCard = () => {
             </div>
             <div className={styles["sensors-list"]}>
                 <SensorCard/>
+                <SensorCard/>
+                <SensorCard/>
+                <SensorCard/>
+                <SensorCard/>
             </div>
         </div>
     );

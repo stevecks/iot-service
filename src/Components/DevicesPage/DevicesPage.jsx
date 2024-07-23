@@ -1,18 +1,22 @@
-import "./DevicesPage.css";
+import styles from "./DevicesPage.module.css";
 import React from 'react';
 import DeviceCard from "../DeviceCard/DeviceCard";
 import DevicesList from "../DevicesList/DevicesList";
+import StartCard from "../StartCard/StartCard";
+import MapCard from "../MapCard/MapCard";
 
 const DevicesPage = () => {
 
     return (
-        <div className='container1'>
-            <div className="content1">
-                <div className="nav-devices1">
+        <div className={styles.container}>
+            <div className={styles.content}>
+                <div className={styles["nav-devices"]}>
                     <DevicesList/>
                 </div>
-                <div className="test1">
-                    <DeviceCard />
+                <div className={styles.test}>
+                    <StartCard/>
+                    <MapCard/>
+                    {/* <DeviceCard /> */}
                 </div>
             </div>
         </div>
