@@ -14,9 +14,9 @@ const DevicesPage = () => {
                     <DevicesList/>
                 </div>
                 <div className={styles.test}>
-                    <StartCard/>
-                    <MapCard/>
-                    {/* <DeviceCard /> */}
+                    {/*<StartCard/>*/}
+                    {/*<MapCard/>*/}
+                    <DeviceCard /> 
                 </div>
             </div>
         </div>
