@@ -22,8 +22,9 @@
 .info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     margin-bottom: 60px;
+    position: relative;
 }
 
 .info__text {
@@ -42,20 +43,41 @@
     font-weight: 400;
 }
 
-.info__btn-box {
+.info__menu-box {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    z-index: 10;
+}
+
+.menu {
     display: flex;
     flex-direction:column;
     justify-content: start;
+    border-radius: 10px;
+    background-color: #7076ed;
+    position: relative;
 }
 
-.info__btn-box__button {
-    border-radius: 20px;
+.menu__btnbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.menu__button {
+    border-radius: 10px;
     width: 40px;
-    height: 40px;
+    height: 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #DADEFE;
     cursor: pointer;
+    background-color: #3f47e600;
+    border: none;
+    transition: width 0.3s ease;
 }
 
 .icon {
@@ -63,16 +85,29 @@
     height: 24px;
 }
 
-/* .test2 {
-    display: block;
-    width: 100px;
-    height: 800px;
-    background-color: #ef5858;
-} */
-
 .sensors-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
 }
+
+.editMenu {
+    top: 100%;
+    background-color: rgba(255, 255, 255, 0);z-index: 10;
+}
+
+.editMenu ul {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.editMenu li {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.editMenu li:hover {
+    background-color: #f0f0f0;
+}
+

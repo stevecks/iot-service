@@ -2,8 +2,8 @@ import styles from "./DevicesPage.module.css";
 import React from 'react';
 import DeviceCard from "../DeviceCard/DeviceCard";
 import DevicesList from "../DevicesList/DevicesList";
-import StartCard from "../StartCard/StartCard";
-import MapCard from "../MapCard/MapCard";
+// import StartCard from "../StartCard/StartCard";
+// import MapCard from "../MapCard/MapCard";
 
 const DevicesPage = () => {
 
