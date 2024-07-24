@@ -5,6 +5,8 @@ import styles from "./Login.module.css";
 
 
 const Login = () => {
+    const [islogin, setLogin] = useState(false);
+
     const [visible, setVisible] = useState(false);
     const [formData, setFormData] = useState({ name: "", password: "" });
     const [errors, setErrors] = useState({ name: false, password: false });
@@ -33,6 +35,13 @@ const Login = () => {
         }
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (formData.name && formData.password) {
+            setLogin(true);
+        }
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -43,7 +52,7 @@ const Login = () => {
                     size="small" 
                 /> */}
 
-                <form className={styles.form} >
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <label className={styles.form__label} htmlFor="name">Name</label>
                     <input
                         className={styles["form__input-box__input"]}

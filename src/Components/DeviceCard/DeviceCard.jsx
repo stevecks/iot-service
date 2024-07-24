@@ -1,30 +1,55 @@
 import styles from "./DeviceCard.module.css";
 import React from 'react';
-import { MdModeEdit } from "react-icons/md";
+import { useState } from 'react';
+import { MdMoreHoriz } from "react-icons/md";
 import SensorCard from "../SensorCard/SensorCard";
 
 
 const DeviceCard = () => {
 
+    const [menuVisible, setMenuVisible] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuVisible(!menuVisible);
+    };
+
     return (
-        <div className={styles.card}>
+        <div className={styles.card} >
             <div className={styles.info}>
                 <div className={styles.info__text}>
                     <h2 className={styles.info__text__name}>Устройство 1</h2>
                     <div className={styles.info__text__descr}>Описание Описание Описание Описание Описание</div>
                 </div>
-                <div className={styles["info__btn-box"]}>
-                    <button className={styles["info__btn-box__button"]}>
-                        <MdModeEdit className={styles.icon}/>
-                    </button>
+                <div className={styles["info__menu-box"]}>
+                    <div
+                        className={styles.menu}
+                        onMouseEnter={() => setMenuVisible(true)}
+                        onMouseLeave={() => setMenuVisible(false)}
+                        onClick={toggleMenu}
+                    >
+                        <div className={styles.menu__btnbox}>
+                            <button className={styles.menu__button}>
+                                <MdMoreHoriz className={styles.icon} />
+                            </button>
+                        </div>
+                        {menuVisible && (
+                            <div className={styles.editMenu}>
+                                <ul>
+                                    <li>Редактировать</li>
+                                    <li>Удалить</li>
+                                    <li>Детали</li>
+                                </ul>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
             <div className={styles["sensors-list"]}>
-                <SensorCard/>
-                <SensorCard/>
-                <SensorCard/>
-                <SensorCard/>
-                <SensorCard/>
+                <SensorCard />
+                <SensorCard />
+                <SensorCard />
+                <SensorCard />
+                <SensorCard />
             </div>
         </div>
     );
