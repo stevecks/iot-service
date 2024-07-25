@@ -1,6 +1,7 @@
 import styles from "./SensorCard.module.css";
 import React from 'react';
 import { MdModeEdit } from "react-icons/md";
+import { MdExpandMore } from "react-icons/md";
 
 
 const SensorCard = () => {
@@ -20,6 +21,9 @@ const SensorCard = () => {
             <div className={styles["btn-box"]}>
                     <button className={styles["btn-box__button"]}>
                         <MdModeEdit className={styles.icon}/>
+                    </button>
+                    <button className={styles["btn-box__button"]}>
+                        <MdExpandMore className={styles.icon}/>
                     </button>
                 </div>
         </div>

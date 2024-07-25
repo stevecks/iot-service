@@ -40,10 +40,32 @@
     font-weight: 400;
 }
 
+.content__info {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.content__info__table {
+    display: block;
+    height: 200px;
+    width: 300px;
+    background-color: #de7171;
+    border-radius: 20px;
+}
+
+.content__info__timetable {
+    display: block;
+    height: 200px;
+    width: 300px;
+    background-color: #de7171;
+    border-radius: 20px;
+}
+
 .btn-box {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
 }
 
 .btn-box__button {
@@ -52,7 +74,8 @@
     height: 40px;
     justify-content: center;
     align-items: center;
-    background-color: #DADEFE;
+    background-color: #dadefe67;
+    border: none;
     cursor: pointer;
 }
 
