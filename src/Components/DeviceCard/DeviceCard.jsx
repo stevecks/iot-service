@@ -5,7 +5,7 @@ import { MdMoreHoriz } from "react-icons/md";
 import SensorCard from "../SensorCard/SensorCard";
 
 
-const DeviceCard = () => {
+const DeviceCard = ({ onEditDevice }) => {
 
     const [menuVisible, setMenuVisible] = useState(false);
 
@@ -35,9 +35,9 @@ const DeviceCard = () => {
                         {menuVisible && (
                             <div className={styles.editMenu}>
                                 <ul>
-                                    <li>Редактировать</li>
+                                    <li onClick={onEditDevice}>Редактировать</li>
                                     <li>Удалить</li>
-                                    <li>Детали</li>
+                                    <li>Добавить датчик</li>
                                 </ul>
                             </div>
                         )}
@@ -45,8 +45,6 @@ const DeviceCard = () => {
                 </div>
             </div>
             <div className={styles["sensors-list"]}>
-                <SensorCard />
-                <SensorCard />
                 <SensorCard />
                 <SensorCard />
                 <SensorCard />

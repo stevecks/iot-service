@@ -1,9 +1,9 @@
-
 import styles from "./DevicesList.module.css";
 import React from 'react';
 import { MdOutlinePlaylistAdd } from "react-icons/md";
-const DevicesList = () => {
+// import AddDeviceDialog from "./../AddDeviceDialog/AddDeviceDialog"
 
+const DevicesList = ({ onAddDevice }) => {
     return (
         <div className={styles.card}>
             <div className={styles.card__label}>
@@ -49,7 +49,7 @@ const DevicesList = () => {
             </div>
             <div className={styles.card__info}>
                 <div className={styles.card__info__text}>28 устройств</div>
-                <button className={styles.card__info__btn}>
+                <button className={styles.card__info__btn} onClick={onAddDevice}>
                     <MdOutlinePlaylistAdd className={styles.icon} />
                 </button>
             </div>
