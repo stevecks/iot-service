@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-* {
-    font-family: 'Poboto', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --card-color: hsl(28 68% 26%);
+    --card-text-color: hsl(28 100% 85%);
+    --card-menu-color: hsl(246 49% 27%);
+    --card-menu-item-color: hsl(246 43% 54% / 0.6);
 }
 
 .card {
@@ -14,7 +12,8 @@
     width: 100%;
     padding: 20px;
     border-radius: 20px;
-    background-color:blanchedalmond;
+    background-color: var(--card-color);
+    color: var(--card-text-color);
     position: relative;
 
 }
@@ -23,7 +22,7 @@
     display: flex;
     flex-direction: row;
     justify-content: start;
-    margin-bottom: 60px;
+    margin-bottom: 24px;
     position: relative;
 }
 
@@ -43,6 +42,13 @@
     font-weight: 400;
 }
 
+.info__text__coordinates {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    font-weight: 100;
+}
+
 .info__menu-box {
     position: absolute;
     right: 0;
@@ -57,7 +63,7 @@
     flex-direction:column;
     justify-content: start;
     border-radius: 10px;
-    background-color: #7076ed;
+    background-color:var(--card-menu-color);
     position: relative;
 }
 
@@ -75,14 +81,15 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: #3f47e600;
+    background-color: hsl(0 0% 100% / 0);
     border: none;
     transition: width 0.3s ease;
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    color: var(--card-text-color);
 }
 
 .sensors-list {
@@ -94,7 +101,8 @@
 
 .editMenu {
     top: 100%;
-    background-color: rgba(255, 255, 255, 0);z-index: 10;
+    background-color: hsl(0 0% 100% / 0);
+    z-index: 10;
 }
 
 .editMenu ul {
@@ -108,6 +116,6 @@
 }
 
 .editMenu li:hover {
-    background-color: #f0f0f0;
+    background-color: var(--card-menu-item-color);
 }
 
